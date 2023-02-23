@@ -1,5 +1,4 @@
 const detailsContainer = document.querySelector(".details");
-const discName = document.querySelector("h2");
 const loaderContainer = document.querySelector(".loader-container");
 const pageTitle = document.querySelector("title");
 
@@ -9,33 +8,36 @@ const params = new URLSearchParams(queryString);
 
 const id = params.get("id");
 
-console.log(id);
-
-const url = "https://disc-golf-discs.p.rapidapi.com/discs/" + id;
-const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": "58a5580a0emsh26e700c04ff0302p1fb426jsn0906db9307f1",
-    "X-RapidAPI-Host": "disc-golf-discs.p.rapidapi.com",
-  },
-};
+const url = "https://pokeapi.co/api/v2/pokemon/" + id;
 
 let html;
 
-async function fetchDisc() {
+async function fetchPokemon() {
   try {
-    const response = await fetch(url, options);
+    const response = await fetch(url);
     const responseJson = await response.json();
-    const details = responseJson.disc;
+    const details = responseJson;
 
     console.log(details);
-    console.log(pageTitle.text);
 
     loaderContainer.style.display = "none";
 
-    discName.innerHTML = details.name;
-    pageTitle.text += ` | ${details.name}`;
-  } catch (e) {}
+    const height = details.height * 10;
+    const weight = details.weight / 10;
+    const type = details.types[0].type.name;
+    const color = setColorFromType(type);
+
+    html = `<h2 class="name" style="color: ${color}">${details.name}</h2>
+            <img src="${details.sprites.front_shiny}">
+            <img src="${details.sprites.back_shiny}">
+            <p>${height} cm</p>
+            <p>${weight} kg</p>`;
+
+    detailsContainer.innerHTML += html;
+    pageTitle.text += ` | ${details.name}`.toUpperCase();
+  } catch (e) {
+    console.log(e);
+  }
 }
 
-fetchDisc();
+fetchPokemon();

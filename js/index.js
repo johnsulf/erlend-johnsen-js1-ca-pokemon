@@ -1,28 +1,32 @@
-const url = "https://pokeapi.co/api/v2/pokemon/"; // main URL
-const offsetAndLimit = "?offset=0&limit=150"; // setting to only fetch the original 150 Pokémon
-
-const discContainer = document.querySelector(".discs");
+const url = "https://pokeapi.co/api/v2/pokemon/";
+const pokemonCardsContainer = document.querySelector(".pokemon-cards");
 const loaderContainer = document.querySelector(".loader-container");
 
-let html;
-
 async function fetchPokemon() {
-  const response = await fetch(url + offsetAndLimit);
-  const results = await response.json();
-  const pokemon = results.results;
+  try {
+    for (let i = 0; i < 151; i++) {
+      const pokemonResponse = await fetch(url + `${i + 1}`);
+      const pokemonDetails = await pokemonResponse.json();
 
-  for (let i = 0; i < pokemon.length; i++) {
-    const pokemonResponse = await fetch(url + `${i + 1}`);
-    const pokemonDetails = await pokemonResponse.json();
+      loaderContainer.style.display = "none";
 
-    html = `<a class="disc" href="details.html?id=${pokemonDetails.id}">
-                <h3 class="name">${pokemonDetails.name}</h3>
-                <p class="manufacturer">${pokemonDetails.id}</p>
-                <p class="max-weight">${pokemonDetails.weight}</p>
-                <img src="${pokemonDetails.sprites.front_default}"
+      const type = pokemonDetails.types[0].type.name;
+      const color = setColorFromType(type);
+
+      const html = `<a class="pokemon-card" style="background-color: ${color};" href="details.html?id=${
+        pokemonDetails.id
+      }">
+                <h3 class="name">#${i + 1}: ${pokemonDetails.name}</h3>
+                <img class="image" style="background-color: ${color}" src="${
+        pokemonDetails.sprites.front_default
+      }">
+                <p class="type">${type}</p>
               </a>`;
 
-    discContainer.innerHTML += html;
+      pokemonCardsContainer.innerHTML += html;
+    }
+  } catch (e) {
+    console.log(e);
   }
 }
 
