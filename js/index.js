@@ -17,9 +17,9 @@ async function fetchPokemon() {
         pokemonDetails.id
       }">
                 <h3 class="name">#${i + 1}: ${pokemonDetails.name}</h3>
-                <img class="image" style="background-color: ${color}" src="${
-        pokemonDetails.sprites.front_default
-      }">
+                <img class="image" src="${
+                  pokemonDetails.sprites.front_default
+                }">
                 <p class="type">${type}</p>
               </a>`;
 

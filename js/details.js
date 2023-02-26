@@ -13,6 +13,7 @@ const url = "https://pokeapi.co/api/v2/pokemon/" + id;
 let html;
 
 async function fetchPokemon() {
+  loaderContainer.style.display = "block";
   try {
     const response = await fetch(url);
     const responseJson = await response.json();
@@ -22,14 +23,18 @@ async function fetchPokemon() {
 
     loaderContainer.style.display = "none";
 
-    const height = details.height * 10;
-    const weight = details.weight / 10;
+    const height = details.height * 10; // convert from decimeters to centimeters
+    const weight = details.weight / 10; // cnovert from hectograms to kilograms
     const type = details.types[0].type.name;
     const color = setColorFromType(type);
 
     html = `<h2 class="name" style="color: ${color}">${details.name}</h2>
             <img src="${details.sprites.front_shiny}">
             <img src="${details.sprites.back_shiny}">
+            <p style="color: red;">${details.stats[0].base_stat} HP</p>
+            <p>Attack: ${details.stats[1].base_stat}</p>
+            <p>Defense: ${details.stats[2].base_stat}</p>
+            <p>Speed: ${details.stats[5].base_stat}</p>
             <p>${height} cm</p>
             <p>${weight} kg</p>`;
 

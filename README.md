@@ -5,6 +5,10 @@
 This is the repository for my Course Assignment for the JavaScript 1 Course.
 I'll be using the PokéAPI for the project.
 
+## Finding an API
+
+Choosing an API has been a journey! I've tried superheroes, disc golf discs and weather. But ende up ith the PokéAPI. Both fun, nostalgic and easy to work with.
+
 ## Find an API
 
 Search for a public, free-to-use API.

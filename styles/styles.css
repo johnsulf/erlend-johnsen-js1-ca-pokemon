@@ -14,6 +14,7 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
+    justify-content: center;
 }
 
 .pokemon-card {
@@ -35,6 +36,7 @@ a {
     width: 60%;
     border: 6px solid #ffcb05;
     box-shadow: 2px 2px 5px #010101;
+    background-color: #fff;
 }
 
 .type {
@@ -66,5 +68,17 @@ a {
 .back {
     text-decoration: underline;
     color: blue;
+}
+
+@media (max-width: 900px) {
+    .pokemon-cards {
+        grid-template-columns: 1fr 1fr;
+    } 
+}
+
+@media (max-width: 600px) {
+    .pokemon-cards {
+        grid-template-columns: 1fr;
+    } 
 }
 
