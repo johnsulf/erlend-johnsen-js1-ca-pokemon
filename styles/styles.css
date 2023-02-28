@@ -1,8 +1,35 @@
+@font-face {
+    font-family: pokemon;
+    src: url(/assets/fonts/Pokemon\ Solid.ttf);
+}
+
 body {
-    font-family: 'Courier New', Courier, monospace;
-    max-width: 1100px;
-    margin: auto;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+}
+
+header {
+    background-color: #3c5aa6;
     padding: 1rem;
+    text-align: center;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1500px;
+    margin: auto;
+}
+
+h1 {
+    font-family: pokemon;
+    letter-spacing: 5px;
+    font-size: 4rem;
+    color: #ffcb05;
+    padding: 0px;
+    margin: 0px;
+}
+
+h2 {
+    color: #fff;
 }
 
 a {
@@ -11,39 +38,50 @@ a {
 }
 
 .pokemon-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
 }
 
 .pokemon-card {
-    border: 12px solid #ffcb05;
-    border-radius: 12px;
+    border: 8px solid #ffcb05;
+    border-radius: 8px;
     width: 250px;
     height: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    box-shadow: 1px 1px 2px #696969;
 }
 
-.name {
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.name, .type {
     text-transform: capitalize;
 }
 
-.pokemon-card img {
-    width: 60%;
-    border: 6px solid #ffcb05;
-    box-shadow: 2px 2px 5px #010101;
-    background-color: #fff;
+.img-container {
+    width: 230px;
+    height: 130px;
+    border: 2px solid #bbbbbb;
+    box-shadow: 1px 1px 2px #696969;
+    background-color: #ffffff99;
+    display: flex;
+    justify-content: center;
 }
 
-.type {
-    text-transform: capitalize;
+.more-link {
+    padding: 0.5rem;
+    background-color: #00000030;
+    border-radius: 16px;
+    box-shadow: 1px 1px 2px #000000;
 }
-
-
 
 .loader-container {
     display: flex;
@@ -71,14 +109,10 @@ a {
 }
 
 @media (max-width: 900px) {
-    .pokemon-cards {
-        grid-template-columns: 1fr 1fr;
-    } 
+
 }
 
 @media (max-width: 600px) {
-    .pokemon-cards {
-        grid-template-columns: 1fr;
-    } 
+
 }
 

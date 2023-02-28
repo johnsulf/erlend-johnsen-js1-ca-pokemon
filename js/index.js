@@ -13,15 +13,21 @@ async function fetchPokemon() {
       const type = pokemonDetails.types[0].type.name;
       const color = setColorFromType(type);
 
-      const html = `<a class="pokemon-card" style="background-color: ${color};" href="details.html?id=${
-        pokemonDetails.id
-      }">
-                <h3 class="name">#${i + 1}: ${pokemonDetails.name}</h3>
-                <img class="image" src="${
-                  pokemonDetails.sprites.front_default
-                }">
-                <p class="type">${type}</p>
-              </a>`;
+      const html = ` <div class="pokemon-card" style="background-color: ${color}${"90"};">
+          <div>
+            <div class="top-row">
+              <h3 class="name">${pokemonDetails.name}</h3>
+              <p class="type">${type}</p>
+            </div>
+            <div class="img-container">
+              <img src="${pokemonDetails.sprites.front_default}">
+            </div>
+          </div>
+          <a class="more-link" href="details.html?id=${
+            pokemonDetails.id
+          }">More...</a>
+          <p></p>
+        </div>`;
 
       pokemonCardsContainer.innerHTML += html;
     }
