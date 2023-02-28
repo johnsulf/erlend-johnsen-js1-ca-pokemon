@@ -25,7 +25,7 @@ async function fetchPokemon() {
           </div>
           <a class="more-link" href="details.html?id=${
             pokemonDetails.id
-          }">More...</a>
+          }">More</a>
           <p></p>
         </div>`;
 
