@@ -1,0 +1,118 @@
+@font-face {
+    font-family: pokemon;
+    src: url(/assets/fonts/Pokemon\ Solid.ttf);
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+}
+
+header {
+    background-color: #3c5aa6;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1500px;
+    margin: auto;
+}
+
+h1 {
+    font-family: pokemon;
+    letter-spacing: 5px;
+    font-size: 4rem;
+    color: #ffcb05;
+    padding: 0px;
+    margin: 0px;
+}
+
+h2 {
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #010101;
+}
+
+.pokemon-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.pokemon-card {
+    border: 8px solid #ffcb05;
+    border-radius: 8px;
+    width: 250px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 1px 1px 2px #696969;
+}
+
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.name, .type {
+    text-transform: capitalize;
+}
+
+.img-container {
+    width: 230px;
+    height: 130px;
+    border: 2px solid #bbbbbb;
+    box-shadow: 1px 1px 2px #696969;
+    background-color: #ffffff99;
+    display: flex;
+    justify-content: center;
+}
+
+.more-link {
+    padding:  0.5rem 1rem;
+    background-color: #00000020;
+    border-radius: 16px;
+    box-shadow: 1px 1px 2px #000000;
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+ 
+.loader {
+    border: .69rem solid #cc00002a; 
+    border-top: .69rem solid #3c5aa6;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+.back {
+    text-decoration: underline;
+    color: blue;
+}
+
+@media (max-width: 900px) {
+
+}
+
+@media (max-width: 600px) {
+
+}
+
