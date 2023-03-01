@@ -95,7 +95,7 @@ a {
     border-radius: 50%;
     width: 4rem;
     height: 4rem;
-    animation: spin 1.5s linear infinite;
+    animation: spin 1s linear infinite;
   }
   
   @keyframes spin {
