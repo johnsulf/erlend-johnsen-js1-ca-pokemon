@@ -3,6 +3,7 @@ const pokemonCardsContainer = document.querySelector(".pokemon-cards");
 const loaderContainer = document.querySelector(".loader-container");
 
 pokemonCardsContainer.style.display = "none";
+let html = "";
 
 async function fetchPokemon() {
   try {
@@ -13,28 +14,31 @@ async function fetchPokemon() {
       const type = pokemonDetails.types[0].type.name;
       const color = setColorFromType(type);
 
-      const html = `
-        <div class="pokemon-card" style="background-color: ${color}${"90"};">
-          <div>
-            <div class="top-row">
-              <h3 class="name">${pokemonDetails.name}</h3>
-              <p class="type">${type}</p>
-            </div>
-            <div class="img-container">
-              <img src="${pokemonDetails.sprites.front_default}">
-            </div>
-          </div>
-          <a class="more-link" href="details.html?id=${pokemonDetails.id}">More</a>
-          <p></p>
-        </div>`;
-
-      pokemonCardsContainer.innerHTML += html;
+      html += `<div class="pokemon-card" style="background-color: ${color}${"90"};">
+                <div>
+                  <div class="top-row">
+                    <h3 class="name">${pokemonDetails.name}</h3>
+                    <p class="type">${type}</p>
+                  </div>
+                  <div class="img-container">
+                    <img src="${pokemonDetails.sprites.front_default}">
+                  </div>
+                </div>
+                <a class="more-link" href="details.html?id=${
+                  pokemonDetails.id
+                }">More</a>
+                <p></p>
+              </div>`;
     }
   } catch (e) {
-    console.log(e);
+    html = `<div class="error">
+              <p>An error has occured</p>
+              <p>Error: ${e}</p>
+            </div>`;
   } finally {
     loaderContainer.style.display = "none";
     pokemonCardsContainer.style.display = "flex";
+    pokemonCardsContainer.innerHTML = html;
   }
 }
 

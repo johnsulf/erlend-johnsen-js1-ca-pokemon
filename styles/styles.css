@@ -15,7 +15,7 @@ header {
 
 main {
     padding: 2rem;
-    max-width: 1500px;
+    max-width: 1000px;
     margin: auto;
 }
 
@@ -37,8 +37,15 @@ a {
     color: #010101;
 }
 
+.error {
+    text-align: center;
+    padding: 1rem;
+    background-color: #ff000020;
+    border: 2px solid red;
+    border-radius: 8px;
+}
+
 .pokemon-cards {
-    display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
