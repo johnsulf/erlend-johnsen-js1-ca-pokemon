@@ -21,7 +21,7 @@ main {
 
 h1 {
     font-family: pokemon;
-    letter-spacing: 5px;
+    letter-spacing: 10px;
     font-size: 4rem;
     color: #ffcb05;
     padding: 0px;
@@ -33,12 +33,10 @@ h2 {
 }
 
 a {
-    text-decoration: none;
     color: #010101;
 }
 
 .back {
-    text-decoration: underline;
     color: blue;
 }
 
@@ -141,6 +139,30 @@ a {
     50% { transform: translate(-15px, 0) rotate(-15deg); }
     60% { transform: translate(20px, 0) rotate(20deg); }
     100% { transform: translate(0, 0) rotate(0); }
+  }
+
+  form {
+    display: grid;
+    padding-inline: 10rem;
+    padding-block: 2rem;
+    gap: 1rem;
+  }
+
+  input {
+    height: 2rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+  }
+
+  input[type="submit"] {
+    border: none;
+   background-color: #3c5aa6;
+   text-align: center;
+   width: 50%;
+   justify-self: center;
+   color: #fff;
+   box-shadow: 2px 2px 2px #000000;
+   cursor: pointer;
   }
 
 @media (max-width: 900px) {
