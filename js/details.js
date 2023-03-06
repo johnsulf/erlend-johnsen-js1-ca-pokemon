@@ -1,5 +1,5 @@
 const detailsContainer = document.querySelector(".details");
-const loaderContainer = document.querySelector(".loader-container");
+const pokeballContainer = document.querySelector(".pokeball-container");
 const pageTitle = document.querySelector("title");
 
 const queryString = document.location.search;
@@ -13,7 +13,7 @@ const url = "https://pokeapi.co/api/v2/pokemon/" + id;
 let html;
 
 async function fetchPokemon() {
-  loaderContainer.style.display = "block";
+  pokeballContainer.style.display = "block";
   try {
     const response = await fetch(url);
     const responseJson = await response.json();
@@ -21,7 +21,7 @@ async function fetchPokemon() {
 
     console.log(details);
 
-    loaderContainer.style.display = "none";
+    pokeballContainer.style.display = "none";
 
     const height = details.height * 10; // convert from decimeters to centimeters
     const weight = details.weight / 10; // cnovert from hectograms to kilograms

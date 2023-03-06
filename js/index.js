@@ -1,6 +1,6 @@
 const url = "https://pokeapi.co/api/v2/pokemon/";
 const pokemonCardsContainer = document.querySelector(".pokemon-cards");
-const loaderContainer = document.querySelector(".loader-container");
+const pokeballContainer = document.querySelector(".pokeball-container");
 
 pokemonCardsContainer.style.display = "none";
 let html = "";
@@ -36,8 +36,8 @@ async function fetchPokemon() {
               <p>Error: ${e}</p>
             </div>`;
   } finally {
-    loaderContainer.style.display = "none";
-    pokemonCardsContainer.style.display = "flex";
+    // pokeballContainer.style.display = "none";
+    // pokemonCardsContainer.style.display = "flex";
     pokemonCardsContainer.innerHTML = html;
   }
 }
