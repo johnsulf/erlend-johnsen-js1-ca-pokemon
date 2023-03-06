@@ -46,6 +46,7 @@ a {
 }
 
 .pokemon-cards {
+    display: none;
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
@@ -91,10 +92,10 @@ a {
 }
 
 .pokeball-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    position: flex;
+    justify-content: center;
+    margin-top: 2rem;
+
 }
  
 .pokeball {
