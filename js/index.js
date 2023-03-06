@@ -36,7 +36,8 @@ async function fetchPokemon() {
               <p>Error: ${e}</p>
             </div>`;
   } finally {
-    pokeballContainer.style.display = "none";
+    pokemonCardsContainer.classList.add("show");
+    // pokeballContainer.style.display = "none";
     pokemonCardsContainer.style.display = "flex";
     pokemonCardsContainer.innerHTML = html;
   }

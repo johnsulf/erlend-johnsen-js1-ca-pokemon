@@ -37,6 +37,11 @@ a {
     color: #010101;
 }
 
+.back {
+    text-decoration: underline;
+    color: blue;
+}
+
 .error {
     text-align: center;
     padding: 1rem;
@@ -46,7 +51,6 @@ a {
 }
 
 .pokemon-cards {
-    display: none;
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
@@ -92,14 +96,13 @@ a {
 }
 
 .pokeball-container {
-    position: flex;
+    display: grid;
     justify-content: center;
     margin-top: 2rem;
 
 }
  
 .pokeball {
-    position: relative;
     width: 10rem;
     height: 10rem;
     border-radius: 50%;
@@ -139,11 +142,6 @@ a {
     60% { transform: translate(20px, 0) rotate(20deg); }
     100% { transform: translate(0, 0) rotate(0); }
   }
-
-.back {
-    text-decoration: underline;
-    color: blue;
-}
 
 @media (max-width: 900px) {
 
