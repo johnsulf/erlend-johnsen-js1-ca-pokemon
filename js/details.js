@@ -1,5 +1,6 @@
 const detailsContainer = document.querySelector(".details");
 const pokeballContainer = document.querySelector(".pokeball-container");
+const header = document.querySelector("header");
 const pageTitle = document.querySelector("title");
 
 const queryString = document.location.search;
@@ -23,18 +24,26 @@ async function fetchPokemon() {
 
     pokeballContainer.style.display = "none";
 
+
     const height = details.height * 10; // convert from decimeters to centimeters
     const weight = details.weight / 10; // cnovert from hectograms to kilograms
     const type = details.types[0].type.name;
     const color = setColorFromType(type);
 
-    html = `<h2 class="name" style="color: ${color}">${details.name}</h2>
-            <img src="${details.sprites.front_shiny}">
-            <img src="${details.sprites.back_shiny}">
+    header.innerHTML += `<h1 class="name">${details.name}</h1>`;
+    header.style.backgroundColor = color;
+
+    html = `<img src="${details.sprites.other.dream_world.front_default}">
+            <h3>Stats</h3>
             <p style="color: red;">${details.stats[0].base_stat} HP</p>
             <p>Attack: ${details.stats[1].base_stat}</p>
             <p>Defense: ${details.stats[2].base_stat}</p>
             <p>Speed: ${details.stats[5].base_stat}</p>
+            <h3>Top Moves</h3>
+            <p>${details.moves[0].move.name}</p>
+            <p>${details.moves[1].move.name}</p>
+            <p>${details.moves[2].move.name}</p>
+            <h3>Apparance</h3>
             <p>${height} cm</p>
             <p>${weight} kg</p>`;
 
