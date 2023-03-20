@@ -6,6 +6,9 @@ pokemonCardsContainer.style.display = "none";
 let html = "";
 
 async function fetchPokemon() {
+  setTimeout(() => {
+    pokeballContainer.innerHTML += `<p>This might take a while...</p>`;
+  }, 2000);
   try {
     for (let i = 0; i < 151; i++) {
       const pokemonResponse = await fetch(url + `${i + 1}`);
@@ -24,6 +27,7 @@ async function fetchPokemon() {
                     <img src="${pokemonDetails.sprites.front_default}">
                   </div>
                 </div>
+                <p>#${i + 1}</p>
                 <a class="more-link" href="details.html?id=${
                   pokemonDetails.id
                 }">More</a>
