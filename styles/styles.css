@@ -32,12 +32,21 @@ h2 {
     color: #fff;
 }
 
-a {
-    color: #010101;
-}
-
 .back {
     color: blue;
+}
+
+.contact-link {
+    color: #010101;
+    background-color: #ffcb05;
+
+}
+
+.contact-link, .more-link {
+    box-shadow: 1px 1px 2px #000000;
+    border-radius: 24px;
+    font-size: 1.2rem;
+    padding:  0.5rem 1rem;
 }
 
 .error {
@@ -87,10 +96,8 @@ a {
 }
 
 .more-link {
-    padding:  0.5rem 1rem;
     background-color: #00000020;
-    border-radius: 16px;
-    box-shadow: 1px 1px 2px #000000;
+    color: #010101;
 }
 
 .pokeball-container {
