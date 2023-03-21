@@ -87,7 +87,6 @@ h2 {
     border: 2px solid var(--clr-silver);
     box-shadow: var(--box-shadow);
     border-radius: var(--radius-circle);
-    background-color: var(--clr-white);
 }
 
 .pokemon-card__img-container img {
@@ -100,6 +99,22 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
+}
+
+table {
+    width: 250px;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+}
+
+td {
+    border: 1px solid var(--clr-text-primary);
+    padding: 0.5rem;
+    width: 70%;
 }
 
 .pokeball-container {
@@ -174,24 +189,22 @@ h2 {
 }
 
 form {
-    display: grid;
-    padding-inline: 10rem;
-    padding-block: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 1rem;
 }
 
 input {
-    height: 2rem;
     font-size: 1.2rem;
     border-radius: var(--radius-default);
+    padding: 0.5rem;
 }
 
 input[type="submit"] {
     border: none;
     background-color: var(--clr-pokeblue);
     text-align: center;
-    width: 50%;
-    justify-self: center;
     color: var(--clr-white);
     box-shadow: 2px 2px 2px var(--clr-text-primary);
     cursor: pointer;

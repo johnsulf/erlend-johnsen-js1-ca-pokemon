@@ -5,7 +5,7 @@ const pokeballContainer = document.querySelector(".pokeball-container");
 pokemonCardsContainer.style.display = "none";
 let html = "";
 
-async function fetchPokemon() {
+async function fetchEmAll() {
   // sometimes the fetchiing takes several seconds - sometimes not. This shows a message to the user that it might take while
   setTimeout(() => { pokeballContainer.innerHTML += `<p>This might take a while...</p>`; }, 2000);
 
@@ -22,7 +22,7 @@ async function fetchPokemon() {
                     <h3>${pokemonDetails.name}</h3>
                     <p>${type}</p>
                   </div>
-                  <div class="pokemon-card__img-container">
+                  <div class="pokemon-card__img-container bg-white">
                     <img src="${pokemonDetails.sprites.other.dream_world.front_default}">
                   </div>
                 <p>#${i + 1}</p>
@@ -41,4 +41,4 @@ async function fetchPokemon() {
   }
 }
 
-fetchPokemon();
+fetchEmAll();

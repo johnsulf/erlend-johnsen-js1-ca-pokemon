@@ -36,3 +36,10 @@ function setColorFromType(type) {
       return "#A8A77A90";
   }
 }
+
+function tableRow(name, value, bgColor) {
+  return `<tr style="background-color: ${bgColor}">
+            <td>${name}</td>
+            <td>${value}</td>
+          </tr>`
+}

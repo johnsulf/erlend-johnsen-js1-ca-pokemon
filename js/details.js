@@ -33,19 +33,34 @@ async function fetchPokemon() {
     header.innerHTML += `<h1 class="text-black capitalize">${details.name}</h1>`;
     header.style.backgroundColor = color;
 
-    html = `<img src="${details.sprites.other.dream_world.front_default}">
-            <h3>Stats</h3>
-            <p style="color: red;">${details.stats[0].base_stat} HP</p>
-            <p>Attack: ${details.stats[1].base_stat}</p>
-            <p>Defense: ${details.stats[2].base_stat}</p>
-            <p>Speed: ${details.stats[5].base_stat}</p>
+    html = `<div class="pokemon-card__img-container" style="background-color: ${color}">
+              <img src="${details.sprites.other.dream_world.front_default}">
+            </div>
+            <table>
+              <thead>
+                <th colspan="2">Stats</th>
+              </thead>
+              <tbody>
+                ${tableRow("HP", details.stats[0].base_stat, color)}
+                ${tableRow("Attack", details.stats[1].base_stat)}
+                ${tableRow("Defense", details.stats[2].base_stat, color)}
+                ${tableRow("Speed", details.stats[5].base_stat)}
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <th colspan="2">Apparance</th>
+              </thead>
+              <tbody>
+                ${tableRow("Height", height + " cm", color)}
+                ${tableRow("Weight", weight + " kg")}
+              </tbody>
+            </table>
             <h3>Top Moves</h3>
             <p class="capitalize">${details.moves[0].move.name}</p>
             <p class="capitalize">${details.moves[1].move.name}</p>
             <p class="capitalize">${details.moves[2].move.name}</p>
-            <h3>Apparance</h3>
-            <p>${height} cm</p>
-            <p>${weight} kg</p>`;
+            `;
 
     detailsContainer.innerHTML += html;
     pageTitle.text += ` | ${details.name}`.toUpperCase();

@@ -43,6 +43,10 @@
     color: var(--clr-white);
 }
 
+.text-red {
+    color: var(--clr-red);
+}
+
 .bg-pokeyellow {
     background-color: var(--clr-pokeyellow);
 }
