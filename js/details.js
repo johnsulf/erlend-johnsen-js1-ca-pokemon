@@ -14,7 +14,6 @@ const url = "https://pokeapi.co/api/v2/pokemon/" + id;
 let html;
 
 async function fetchPokemon() {
-  pokeballContainer.style.display = "block";
   try {
     const response = await fetch(url);
     const responseJson = await response.json();
@@ -22,25 +21,23 @@ async function fetchPokemon() {
 
     console.log(details);
 
-    pokeballContainer.style.display = "none";
-
-
     const height = details.height * 10; // convert from decimeters to centimeters
     const weight = details.weight / 10; // cnovert from hectograms to kilograms
     const type = details.types[0].type.name;
     const color = setColorFromType(type);
 
     header.innerHTML += `<h1 class="text-black capitalize">${details.name}</h1>
-                        <h2 class="text-black">#${details.id}</h2>`;
+                        <h2 class="text-black">#${details.id}</h2>
+                        `;
     header.style.backgroundColor = color;
 
     html = `<div class="pokemon-card__img-container" style="background-color: ${color}">
               <img src="${details.sprites.other.dream_world.front_default}">
             </div>
             <table>
-              <thead>
-                <th colspan="2">Stats</th>
-              </thead>
+              <caption>
+                <h3>Stats</h3>
+              </caption>
               <tbody>
                 ${tableRow("HP", details.stats[0].base_stat, color)}
                 ${tableRow("Attack", details.stats[1].base_stat)}
@@ -49,9 +46,9 @@ async function fetchPokemon() {
               </tbody>
             </table>
             <table>
-              <thead>
-                <th colspan="2">Apparance</th>
-              </thead>
+              <caption>
+                <h3>Apparance</h3>
+              </caption>
               <tbody>
                 ${tableRow("Height", height + " cm", color)}
                 ${tableRow("Weight", weight + " kg")}
@@ -62,11 +59,13 @@ async function fetchPokemon() {
             <p class="capitalize">${details.moves[1].move.name}</p>
             <p class="capitalize">${details.moves[2].move.name}</p>
             `;
-
-    detailsContainer.innerHTML += html;
     pageTitle.text += ` | ${details.name}`.toUpperCase();
   } catch (e) {
-    console.log(e);
+    header.innerHTML += `<h1 class="text-pokeyellow capitalize">Error</h1>`;
+    html = errorHtml(e);
+  } finally {
+    pokeballContainer.style.display = "none";
+    detailsContainer.innerHTML += html;
   }
 }
 

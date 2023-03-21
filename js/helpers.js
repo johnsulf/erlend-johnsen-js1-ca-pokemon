@@ -41,5 +41,12 @@ function tableRow(name, value, bgColor) {
   return `<tr style="background-color: ${bgColor}">
             <td>${name}</td>
             <td>${value}</td>
-          </tr>`
+          </tr>`;
+}
+
+function errorHtml(errorDetails) {
+  return `<div class="error">
+            <p>An error has occured</p>
+            <p>Error: ${errorDetails}</p>
+          </div>`;
 }

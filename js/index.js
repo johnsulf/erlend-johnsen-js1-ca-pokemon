@@ -30,10 +30,7 @@ async function fetchEmAll() {
               </div>`;
     }
   } catch (e) {
-    html = `<div class="error">
-              <p>An error has occured</p>
-              <p>Error: ${e}</p>
-            </div>`;
+    html = errorHtml(e);
   } finally {
     pokeballContainer.style.display = "none";
     pokemonCardsContainer.innerHTML = html;
