@@ -30,7 +30,8 @@ async function fetchPokemon() {
     const type = details.types[0].type.name;
     const color = setColorFromType(type);
 
-    header.innerHTML += `<h1 class="text-black capitalize">${details.name}</h1>`;
+    header.innerHTML += `<h1 class="text-black capitalize">${details.name}</h1>
+                        <h2 class="text-black">#${details.id}</h2>`;
     header.style.backgroundColor = color;
 
     html = `<div class="pokemon-card__img-container" style="background-color: ${color}">
