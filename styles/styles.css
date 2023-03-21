@@ -1,61 +1,54 @@
-@font-face {
-    font-family: pokemon;
-    src: url(/assets/fonts/Pokemon\ Solid.ttf);
+@import url(/styles/imports/variables_constants.css);
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-family: var(--ff-primary);
+    height: 100%;
 }
 
 header {
-    background-color: #3c5aa6;
-    padding: 1rem;
+    background-color: var(--clr-pokeblue);
+    display: grid;
     text-align: center;
+    justify-content: center;
 }
 
-main {
-    padding: 2rem;
-    max-width: 1000px;
-    margin: auto;
+main,
+header {
+    padding: 1rem;
 }
 
 h1 {
-    font-family: pokemon;
-    letter-spacing: 10px;
-    font-size: 4rem;
-    color: #ffcb05;
-    padding: 0px;
-    margin: 0px;
+    font-family: var(--ff-pokemon);
+    letter-spacing: 0.5rem;
+    font-size: 2.5rem;
+    color: var(--clr-pokeyellow);
 }
 
 h2 {
-    color: #fff;
+    color: var(--clr-white);
+    font-size: 1.5rem;
 }
 
-.back {
-    color: blue;
-}
-
-.contact-link {
-    color: #010101;
-    background-color: #ffcb05;
-
-}
-
-.contact-link,
-.more-link {
-    box-shadow: 1px 1px 2px #000000;
-    border-radius: 24px;
+.cta {
+    color: var(--clr-text-primary);
+    box-shadow: 1px 1px 2px var(--clr-text-primary);
+    border-radius: var(--radius-default);
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
+    margin-block: 1rem;
 }
 
 .error {
     text-align: center;
     padding: 1rem;
-    background-color: #ff000020;
-    border: 2px solid red;
-    border-radius: 8px;
+    background-color: var(--clr-error-bg);
+    border: 2px solid var(--clr-red);
+    border-radius: var(--radius-default);
 }
 
 .pokemon-cards {
@@ -72,15 +65,15 @@ h2 {
 }
 
 .pokemon-card {
-    border: 8px solid #ffcb05;
-    border-radius: 8px;
+    border: 8px solid var(--clr-pokeyellow);
+    border-radius: var(--radius-default);
     width: 250px;
     height: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 1px 1px 2px #696969;
+    box-shadow: var(--box-shadow);
 }
 
 .top-row {
@@ -90,18 +83,17 @@ h2 {
     width: 230px;
 }
 
-.name,
-.type {
+.capitalize {
     text-transform: capitalize;
 }
 
 .img-container {
     width: 150px;
     height: 150px;
-    border: 2px solid #bbbbbb;
-    box-shadow: 1px 1px 2px #696969;
-    border-radius: 50%;
-    background-color: #ffffff99;
+    border: 2px solid var(--clr-silver);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--radius-circle);
+    background-color: var(--clr-white);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -110,11 +102,6 @@ h2 {
 .img-container img {
     width: 150px;
     height: 150px;
-}
-
-.more-link {
-    background-color: #00000020;
-    color: #010101;
 }
 
 .pokeball-container {
@@ -132,9 +119,9 @@ h2 {
 .pokeball {
     width: 10rem;
     height: 10rem;
-    border-radius: 50%;
-    border: 10px solid black;
-    background: linear-gradient(to bottom, red 50%, white 50%);
+    border-radius: var(--radius-circle);
+    border: 10px solid var(--clr-text-primary);
+    background: linear-gradient(to bottom, var(--clr-red) 50%, var(--clr-white) 50%);
     animation: wiggle 1.2s infinite;
 }
 
@@ -144,7 +131,7 @@ h2 {
     position: absolute;
     top: 50%;
     left: 50%;
-    border: 10px solid black;
+    border: 10px solid var(--clr-text-primary);
     transform: translate(-50%, -50%);
 
 }
@@ -152,8 +139,8 @@ h2 {
 .pokeball::before {
     width: 60px;
     height: 60px;
-    border-radius: 50%;
-    background-color: #a0a0a0;
+    border-radius: var(--radius-circle);
+    background-color: var(--clr-silver);
     z-index: 1;
 }
 
@@ -198,20 +185,24 @@ form {
 input {
     height: 2rem;
     font-size: 1.2rem;
-    border-radius: 8px;
+    border-radius: var(--radius-default);
 }
 
 input[type="submit"] {
     border: none;
-    background-color: #3c5aa6;
+    background-color: var(--clr-pokeblue);
     text-align: center;
     width: 50%;
     justify-self: center;
-    color: #fff;
-    box-shadow: 2px 2px 2px #000000;
+    color: var(--clr-white);
+    box-shadow: 2px 2px 2px var(--clr-text-primary);
     cursor: pointer;
 }
 
-@media (max-width: 900px) {}
-
-@media (max-width: 600px) {}
+@media (min-width: 600px) {
+    main {
+        padding: 2rem;
+        max-width: 1000px;
+        margin: auto;
+    }
+}

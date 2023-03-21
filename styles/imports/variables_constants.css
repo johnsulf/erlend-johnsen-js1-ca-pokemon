@@ -1,0 +1,56 @@
+/* VARIABLES & CONSTANTS*/
+
+@font-face {
+    font-family: pokemon;
+    src: url(/assets/fonts/Pokemon\ Solid.ttf);
+}
+
+:root {
+    /* colors */
+    --clr-pokeblue: #3c5aa6;
+    --clr-pokeyellow: #ffcb05;
+
+    --clr-text-primary: #010101;
+    --clr-white: #fff;
+
+    --clr-silver: #bbbbbb;
+    --clr-box-shadow: #696969;
+
+    --clr-error-bg: #ff000020;
+    --clr-red: #ff0000;
+
+    /* typography */
+    --ff-primary: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    --ff-pokemon: pokemon;
+
+    /* box shadow */
+    --box-shadow: 1px 1px 2px var(--clr-box-shadow);
+
+    /* border radius */
+    --radius-default: 1rem;
+    --radius-circle: 50%;
+}
+
+.text-pokeyellow {
+    color: var(--clr-pokeyellow);
+}
+
+.text-black {
+    color: var(--clr-text-primary);
+}
+
+.text-white {
+    color: var(--clr-white);
+}
+
+.bg-pokeyellow {
+    background-color: var(--clr-pokeyellow);
+}
+
+.bg-black {
+    background-color: var(--clr-text-primary);
+}
+
+.bg-white {
+    background-color: var(--clr-white);
+}

@@ -30,7 +30,7 @@ async function fetchPokemon() {
     const type = details.types[0].type.name;
     const color = setColorFromType(type);
 
-    header.innerHTML += `<h1 class="name">${details.name}</h1>`;
+    header.innerHTML += `<h1 class="text-black capitalize">${details.name}</h1>`;
     header.style.backgroundColor = color;
 
     html = `<img src="${details.sprites.other.dream_world.front_default}">
@@ -40,9 +40,9 @@ async function fetchPokemon() {
             <p>Defense: ${details.stats[2].base_stat}</p>
             <p>Speed: ${details.stats[5].base_stat}</p>
             <h3>Top Moves</h3>
-            <p>${details.moves[0].move.name}</p>
-            <p>${details.moves[1].move.name}</p>
-            <p>${details.moves[2].move.name}</p>
+            <p class="capitalize">${details.moves[0].move.name}</p>
+            <p class="capitalize">${details.moves[1].move.name}</p>
+            <p class="capitalize">${details.moves[2].move.name}</p>
             <h3>Apparance</h3>
             <p>${height} cm</p>
             <p>${weight} kg</p>`;
