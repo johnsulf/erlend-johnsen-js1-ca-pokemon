@@ -15,6 +15,7 @@ header {
     display: grid;
     text-align: center;
     justify-content: center;
+    gap: 0.5rem;
 }
 
 main,
@@ -40,7 +41,6 @@ h2 {
     border-radius: var(--radius-default);
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
-    margin-block: 1rem;
 }
 
 .error {
@@ -51,22 +51,20 @@ h2 {
     border-radius: var(--radius-default);
 }
 
+.capitalize {
+    text-transform: capitalize;
+}
+
 .pokemon-cards {
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
 }
 
-.details {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.pokemon-card {
+.pokemon-cards__pokemon-card {
     border: 8px solid var(--clr-pokeyellow);
     border-radius: var(--radius-default);
+    padding: 0.5rem;
     width: 250px;
     height: 350px;
     display: flex;
@@ -76,32 +74,32 @@ h2 {
     box-shadow: var(--box-shadow);
 }
 
-.top-row {
+.pokemon-card__top-row {
     display: flex;
     justify-content: space-between;
     align-items: end;
-    width: 230px;
+    width: 250px;
 }
 
-.capitalize {
-    text-transform: capitalize;
-}
-
-.img-container {
+.pokemon-card__img-container {
     width: 150px;
     height: 150px;
     border: 2px solid var(--clr-silver);
     box-shadow: var(--box-shadow);
     border-radius: var(--radius-circle);
     background-color: var(--clr-white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.img-container img {
+.pokemon-card__img-container img {
     width: 150px;
     height: 150px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .pokeball-container {
@@ -116,7 +114,7 @@ h2 {
     margin: 0;
 }
 
-.pokeball {
+.pokeball-container__pokeball {
     width: 10rem;
     height: 10rem;
     border-radius: var(--radius-circle);
@@ -125,8 +123,8 @@ h2 {
     animation: wiggle 1.2s infinite;
 }
 
-.pokeball::before,
-.pokeball::after {
+.pokeball-container__pokeball::before,
+.pokeball-container__pokeball::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -136,7 +134,7 @@ h2 {
 
 }
 
-.pokeball::before {
+.pokeball-container__pokeball::before {
     width: 60px;
     height: 60px;
     border-radius: var(--radius-circle);
@@ -144,7 +142,7 @@ h2 {
     z-index: 1;
 }
 
-.pokeball::after {
+.pokeball-container__pokeball::after {
     width: 95%;
     height: 0;
 }

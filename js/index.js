@@ -17,12 +17,12 @@ async function fetchPokemon() {
       const type = pokemonDetails.types[0].type.name;
       const color = setColorFromType(type);
 
-      html += `<div class="pokemon-card" style="background-color: ${color}">
-                  <div class="top-row capitalize">
+      html += `<div class="pokemon-cards__pokemon-card" style="background-color: ${color}">
+                  <div class="pokemon-card__top-row capitalize">
                     <h3>${pokemonDetails.name}</h3>
                     <p>${type}</p>
                   </div>
-                  <div class="img-container">
+                  <div class="pokemon-card__img-container">
                     <img src="${pokemonDetails.sprites.other.dream_world.front_default}">
                   </div>
                 <p>#${i + 1}</p>
