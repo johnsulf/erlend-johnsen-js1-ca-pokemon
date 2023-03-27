@@ -50,3 +50,16 @@ function errorHtml(errorDetails) {
             <p>Error: ${errorDetails}</p>
           </div>`;
 }
+
+function validateInput(errorId, inputId, len) {
+  console.log(inputId.value.trim().length);
+  if (inputId.value.trim().length > len) {
+    errorId.style.display = "none";
+    inputId.style.border = "1px solid black"
+    return true;
+  } else {
+    errorId.style.display = "block";
+    inputId.style.border = "2px solid red"
+    return false;
+  }
+}

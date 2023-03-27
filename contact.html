@@ -15,14 +15,29 @@
     </header>
     <main>
         <a href="index.html">Go Back</a>
-        <form action="">
-            <input type="text" name="name" id="name" placeholder="Name">
-            <input type="text" name="subject" id="subject" placeholder="Subject">
-            <input type="email" name="email" id="email" placeholder="Email">
-            <input type="text" name="adress" id="adress" placeholder="Adress">
-            <input type="submit" value="SUBMIT">
+        <div id="successMessage" class="success">Your form has been submitted. We'll get in touch shortly!</div>
+        <form id="contactForm">
+            <label for="name">Name (required):</label>
+            <input type="text" id="name">
+            <p id="nameError" class="form-error">Please enter a name</p>
+
+            <label for="subject">Subject (minimum length 10):</label>
+            <input type="text" id="subject">
+            <p id="subjectError" class="form-error">Subject must have at least 10 characters</p>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email">
+            <p id="emailError" class="form-error">Please enter a valid email address</p>
+
+            <label for="address">Address (minimum length 25):</label>
+            <input type="text" id="address">
+            <p id="addressError" class="form-error">Address must have at least 25 characters</p>
+
+            <button type="submit">Submit</button>
         </form>
     </main>
+    <script src="js/helpers.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 
 </html>
