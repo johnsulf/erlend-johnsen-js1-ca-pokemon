@@ -7,59 +7,13 @@ I'll be using the PokéAPI for the project.
 
 ## Finding an API
 
-Choosing an API has been a journey! I've tried superheroes, disc golf discs and weather. But ende up ith the PokéAPI. Both fun, nostalgic and easy to work with.
+Initially I had an idea of making something with the PokéAPI. Then I discarded that beacuse of how the API works. When calling fetch() on the URL and json() on the response it returns an array of objects with two properties: name and url. That's it. And that's obviously not enough for the requirements in this assignment. So I started looking at other API's, but couldn't quite let go of the idea. Then I came up with the solution of calling fetch() on the URL + id. That worked and gave me the result I wanted. 
 
-## Find an API
-
-Search for a public, free-to-use API.
-
-You will need to make two calls to this API:
-
-1. to fetch an array of results
-2. to fetch a single result using an id, name, or other property.
-   You will need to read the API's documentation to see what URLs are available, if they require a key to be sent in the header, and any other configuration they might need.
-
-There are many free APIs discoverable by a Google search.
-
-You may not use the APIs used in the lessons.
-
-## Styling
-
-The focus of the CA is on JavaScript, not styling. Yet, as a front-end developer you will always need to produce user-interfaces that make sense and are easy to follow. You will need to provide navigation to and from the home page (index.html) and the contact page.
-
-Both API calls should include a loading indicator.
+There might be faster way of fetcing them all, but it works and I'm quite happy with the result.
 
 ## index.html
 
-Make a call to your API URL. Loop through the results and create HTML for each result.
-
-You must display at least 3 different properties inside the HTML. It's not required to display an image.
-
-You will need to link each result to a details.html page and to pass a parameter in the query string to that page.
-
-If you are going to fetch the individual result on the details page by its id, then pass an id in the query string.
-
-If you will be retrieving by another property, like name for example, pass the name in the query string.
-
-You will fetch this parameter from the query string in the details page code.
-
-Catch any errors and display a message on the page if an error occurs.
-
-## details.html
-
-(Remember, you will need a parameter in the query string on this page, so either click through to it from the index page or manually add a parameter to the URL).
-
-Retrieve the id, name or other parameter from the query string.
-
-Once you have the parameter, add it to the API URL in the format the API requires.
-
-Make an API call using the URL you create.
-
-Display at least 3 different properties from the received JSON on this page.
-
-Set the title of the HTML page to be one of the property values, like name, title or another relevant property.
-
-Catch any errors and display a message on the page if an error occurs.
+The idea behind the homepage is to show the results as Pokémon cards.
 
 ## contact.html
 
