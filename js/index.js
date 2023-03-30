@@ -11,22 +11,22 @@ async function fetchEmAll() {
 
   try {
     for (let i = 0; i < 151; i++) {
-      const pokemonResponse = await fetch(url + `${i + 1}`);
-      const pokemonDetails = await pokemonResponse.json();
+      const res = await fetch(url + `${i + 1}`);
+      const details = await res.json();
 
-      const type = pokemonDetails.types[0].type.name;
+      const type = details.types[0].type.name;
       const color = setColorFromType(type);
 
       html += `<div class="pokemon-cards__pokemon-card" style="background-color: ${color}">
                   <div class="pokemon-card__top-row capitalize">
-                    <h3>${pokemonDetails.name}</h3>
+                    <h3>${details.name}</h3>
                     <p>${type}</p>
                   </div>
                   <div class="pokemon-card__img-container bg-white">
-                    <img src="${pokemonDetails.sprites.other.dream_world.front_default}">
+                    <img src="${details.sprites.other.dream_world.front_default}"; alt="${imageAltText(type, details.name)}">
                   </div>
                 <p>#${i + 1}</p>
-                <a class="cta bg-white" href="details.html?id=${pokemonDetails.id}">More details</a>
+                <a class="cta bg-white" href="details.html?id=${details.id}">More details</a>
               </div>`;
     }
   } catch (e) {

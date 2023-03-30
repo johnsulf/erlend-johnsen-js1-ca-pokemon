@@ -21,6 +21,14 @@ function setColorFromType(type) {
   return typeColors[type];
 }
 
+function capitalizeString(string) {
+  return `${(string).charAt(0).toUpperCase() + (string).slice(1)}`
+}
+
+function imageAltText(type, name) {
+  return `Colorful, classic drawing of the ${type}-pokémon ${capitalizeString(name)}`
+}
+
 // creates a table row with pokemon details
 function tableRow(name, value, bgColor) {
   return `<tr style="background-color: ${bgColor}">
@@ -31,7 +39,7 @@ function tableRow(name, value, bgColor) {
 
 // error message
 function errorHtml(errorDetails) {
-  return `<div class="error">
+  return `<div class="error"; style="display: block">
             <p>An error has occured</p>
             <p>Error: ${errorDetails}</p>
           </div>`;

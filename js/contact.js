@@ -25,6 +25,7 @@ function validateForm(event) {
     event.preventDefault();
 
     // this says that there has been an attmept on submitting the form
+    // used to run the updateErrorOnInput- and updateEmailErrorOnInput functions
     submitButtonPressed = true;
 
     // helper functions that validates each input field. each one returns true if the check is passed

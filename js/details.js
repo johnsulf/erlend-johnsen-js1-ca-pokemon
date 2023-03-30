@@ -15,9 +15,8 @@ let html;
 
 async function fetchPokemon() {
   try {
-    const response = await fetch(url);
-    const responseJson = await response.json();
-    const details = responseJson;
+    const res = await fetch(url);
+    const details = await res.json();
 
     console.log(details);
 
@@ -32,7 +31,7 @@ async function fetchPokemon() {
     header.style.backgroundColor = color;
 
     html = `<div class="pokemon-card__img-container" style="background-color: ${color}">
-              <img src="${details.sprites.other.dream_world.front_default}">
+              <img src="${details.sprites.other.dream_world.front_default}" alt="${imageAltText(type, details.name)}">
             </div>
             <table>
               <caption>
@@ -55,13 +54,12 @@ async function fetchPokemon() {
               </tbody>
             </table>
             <h3>Top Moves</h3>
-            <p class="capitalize">${details.moves[0].move.name}</p>
-            <p class="capitalize">${details.moves[1].move.name}</p>
-            <p class="capitalize">${details.moves[2].move.name}</p>
+            <p>💥 ${capitalizeString(details.moves[0].move.name)} 💥</p>
+            <p>🌪 ${capitalizeString(details.moves[1].move.name)}  🌪</p>
+            <p>⚡️ ${capitalizeString(details.moves[2].move.name)} ⚡️</p>
             `;
     pageTitle.text += ` | ${details.name}`.toUpperCase();
   } catch (e) {
-    header.innerHTML += `<h1 class="text-pokeyellow capitalize">Error</h1>`;
     html = errorHtml(e);
   } finally {
     pokeballContainer.style.display = "none";
