@@ -231,8 +231,8 @@ img[alt] {
 button[type="submit"] {
     border: none;
     border-radius: var(--radius-default);
-    margin-top: 1rem;
-    padding: 1rem;
+    margin-top: 2rem;
+    padding: 0.5rem;
     background-color: var(--clr-pokeblue);
     text-align: center;
     color: var(--clr-white);
