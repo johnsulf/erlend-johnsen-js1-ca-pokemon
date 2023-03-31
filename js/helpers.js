@@ -21,10 +21,12 @@ function setColorFromType(type) {
   return typeColors[type];
 }
 
+// capitalizes the first letter of a string. Helpful when f.ex. a name comes in the end of a sentence.
 function capitalizeString(string) {
   return `${(string).charAt(0).toUpperCase() + (string).slice(1)}`
 }
 
+// displayes a standardized alt text to the images, with the type and the name of the Pokémon being dynamic
 function imageAltText(type, name) {
   return `Colorful, classic drawing of the ${type}-pokémon ${capitalizeString(name)}`
 }
@@ -37,8 +39,8 @@ function tableRow(name, value, bgColor) {
           </tr>`;
 }
 
-// error message
-function errorHtml(errorDetails) {
+// error message. Can also display additional information about the error if needed
+function errorHtml(errorDetails = "") {
   return `<div class="error"; style="display: block">
             <p>An error has occured</p>
             <p>Error: ${errorDetails}</p>
@@ -53,7 +55,7 @@ function validateInput(errorId, inputId, len) {
   return isValid;
 }
 
-// same as validateInput, but checks if the input is an email pattern
+// same as validateInput, but checks if the input has an email pattern
 function validateEmail(errorId, email) {
   const regEx = /\S+@\S+\.\S+/;
   const hasEmailPattern = regEx.test(email.value);
@@ -62,7 +64,7 @@ function validateEmail(errorId, email) {
   return hasEmailPattern;
 }
 
-// listens for input and checks if the validation rules are met on every keypress. If validation passes, the red border and text get removed
+// listens for input and checks if the validation rules are met on every input. If validation passes, the red border and text get removed
 function updateErrorOnInput(inputId, errorId, minLength) {
   inputId.addEventListener('input', () => {
     const isValid = inputId.value.trim().length > minLength;
@@ -71,7 +73,7 @@ function updateErrorOnInput(inputId, errorId, minLength) {
   });
 }
 
-// same as updateErrorOnInput, but checking if the input is an email pattern
+// same as updateErrorOnInput, but checking if the input has an email pattern
 function updateEmailErrorOnInput(errorId, email) {
   const regEx = /\S+@\S+\.\S+/;
   email.addEventListener('input', () => {
