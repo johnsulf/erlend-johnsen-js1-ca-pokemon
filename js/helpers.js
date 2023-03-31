@@ -1,4 +1,5 @@
 // returns the color of the pokemon type. opacity is added to all colors for better contrast on black text color
+// i've found the colors here: https://gist.github.com/apaleslimghost/0d25ec801ca4fc43317bcff298af43c3
 function setColorFromType(type) {
   const typeColors = {
     grass: "#7AC74C90",
